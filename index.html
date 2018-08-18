@@ -89,19 +89,19 @@
 //                };
 
                 
-                $.ajax({
-                    type: 'POST',
-                    url: "https://httpbin.org/post",
-                    data: {
-                        test2: "1"
-                    },
-                    success: function(result) {
-                        alert("POST success" + JSON.stringify(result));
-                    },
-                    error: function(xhr, textStatus, thrownError) {
-                        alert(textStatus);
-                    }
-                });
+//                $.ajax({
+//                    type: 'POST',
+//                    url: "https://httpbin.org/post",
+//                    data: {
+//                        test2: "1"
+//                    },
+//                    success: function(result) {
+//                        alert("POST success" + JSON.stringify(result));
+//                    },
+//                    error: function(xhr, textStatus, thrownError) {
+//                        alert(textStatus);
+//                    }
+//                });
 
 
                 //alert(JSON.stringify(person));
@@ -138,10 +138,37 @@
 
 
                 //OK
+//                
+//                $.ajax({
+//                    type: "GET",
+//                    url:"https://httpbin.org/get",
+//                    //url: "https://jsonplaceholder.typicode.com/todos/1",
+//                    //                    data: {
+//                    //                        datafromtestFile: $("#input").val(),
+//                    //                    },
+//                    dataType: "text",
+//                    success: function(happy) {
+//                        alert("Get Success = " + happy);
+//                    },
+//                    error: function(xhr, ajaxOptions, thrownError) {
+//                        alert("error");
+//                        alert("thrownError = " + thrownError);
+//                        alert("ajaxOptions = " + ajaxOptions);
+//                        //通常ajaxOptions或thrownError只有一個有值
+//                    },
+//                    complete: function(XMLHttpRequest, textStatus) {
+//                        alert("textStatus = " + textStatus);
+//                        //alert("complete");
+//                        // the options for this ajax request
+//
+//                    }
+//
+//                })
                 
+                 
                 $.ajax({
                     type: "GET",
-                    url:"https://httpbin.org/get",
+                    url:"https://service.health200.tw/insurtech/api/myfitcoin/me",
                     //url: "https://jsonplaceholder.typicode.com/todos/1",
                     //                    data: {
                     //                        datafromtestFile: $("#input").val(),
@@ -164,6 +191,7 @@
                     }
 
                 })
+                
 
 
 
