@@ -68,22 +68,35 @@
         $(document).ready(function() {
             $("#test").click(function() {
 
-                alert("Hello! I am an alert box!");
+                alert("Hello! I am an alert box!2");
 
                 var person = {
                     userName: "player-21",
                     password: "123456"
                 }
+//
+//                // construct an HTTP request
+//                var xhr = new XMLHttpRequest();
+//                xhr.open("post", "https://service.health200.tw/insurtech/api/admin/login", true);
+//                xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+//
+//                // send the collected data as JSON
+//                xhr.send(JSON.stringify(person));
+//
+//                xhr.onloadend = function() {
+//                     alert("done");
+//                    // done
+//                };
 
+                
                 $.ajax({
                     type: 'POST',
-                    url: "https://service.health200.tw/insurtech/api/admin/login",
+                    url: "https://httpbin.org/post",
                     data: {
-                        userName: "player-21",
-                        password: "123456"
+                        test2: "1"
                     },
                     success: function(result) {
-                        alert(JSON.stringify(result));
+                        alert("POST success" + JSON.stringify(result));
                     },
                     error: function(xhr, textStatus, thrownError) {
                         alert(textStatus);
@@ -92,12 +105,14 @@
 
 
                 //alert(JSON.stringify(person));
-                
+
+                /*
                 $.ajax({
                     url: 'https://service.health200.tw/insurtech/api/admin/login',
                     type: 'POST',
-                    dataType: 'text',
-                    contentType: 'application/json',
+                    dataType: 'json',
+                    //contentType: 'application/json',
+                    crossDomain: true,
                     success: function(data) {
                         alert("success");
                         //alert(data.msg);
@@ -118,21 +133,22 @@
                     },
 
                     data: JSON.stringify(person)
-                });
+                });*/
 
 
 
                 //OK
-                /*
+                
                 $.ajax({
                     type: "GET",
-                    url: "https://jsonplaceholder.typicode.com/todos/1",
+                    url:"https://httpbin.org/get",
+                    //url: "https://jsonplaceholder.typicode.com/todos/1",
                     //                    data: {
                     //                        datafromtestFile: $("#input").val(),
                     //                    },
                     dataType: "text",
                     success: function(happy) {
-                        alert("happy = " + happy);
+                        alert("Get Success = " + happy);
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
                         alert("error");
@@ -147,7 +163,7 @@
 
                     }
 
-                })*/
+                })
 
 
 
