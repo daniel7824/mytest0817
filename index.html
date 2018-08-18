@@ -46,7 +46,7 @@
         <hr>
         <div class="w3-cell-row">
             <div class="w3-cell" style="width:30%">
-                <img class="w3-circle" src="img_avatar.jpg" style="width:100%">
+                <img class="w3-circle" src="playstore-icon.png" style="width:100%">
             </div>
             <div class="w3-cell w3-container">
                 <h3>The Avengers</h3>
@@ -74,34 +74,35 @@
                     userName: "player-21",
                     password: "123456"
                 }
-//
-//                // construct an HTTP request
-//                var xhr = new XMLHttpRequest();
-//                xhr.open("post", "https://service.health200.tw/insurtech/api/admin/login", true);
-//                xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-//
-//                // send the collected data as JSON
-//                xhr.send(JSON.stringify(person));
-//
-//                xhr.onloadend = function() {
-//                     alert("done");
-//                    // done
-//                };
+                //
+                //                // construct an HTTP request
+                //                var xhr = new XMLHttpRequest();
+                //                xhr.open("post", "https://service.health200.tw/insurtech/api/admin/login", true);
+                //                xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+                //
+                //                // send the collected data as JSON
+                //                xhr.send(JSON.stringify(person));
+                //
+                //                xhr.onloadend = function() {
+                //                     alert("done");
+                //                    // done
+                //                };
 
-                
-//                $.ajax({
-//                    type: 'POST',
-//                    url: "https://httpbin.org/post",
-//                    data: {
-//                        test2: "1"
-//                    },
-//                    success: function(result) {
-//                        alert("POST success" + JSON.stringify(result));
-//                    },
-//                    error: function(xhr, textStatus, thrownError) {
-//                        alert(textStatus);
-//                    }
-//                });
+
+                //ok
+                //                $.ajax({
+                //                    type: 'POST',
+                //                    url: "https://httpbin.org/post",
+                //                    data: {
+                //                        test2: "1"
+                //                    },
+                //                    success: function(result) {
+                //                        alert("POST success" + JSON.stringify(result));
+                //                    },
+                //                    error: function(xhr, textStatus, thrownError) {
+                //                        alert(textStatus);
+                //                    }
+                //                });
 
 
                 //alert(JSON.stringify(person));
@@ -138,34 +139,35 @@
 
 
                 //OK
-//                
-//                $.ajax({
-//                    type: "GET",
-//                    url:"https://httpbin.org/get",
-//                    //url: "https://jsonplaceholder.typicode.com/todos/1",
-//                    //                    data: {
-//                    //                        datafromtestFile: $("#input").val(),
-//                    //                    },
-//                    dataType: "text",
-//                    success: function(happy) {
-//                        alert("Get Success = " + happy);
-//                    },
-//                    error: function(xhr, ajaxOptions, thrownError) {
-//                        alert("error");
-//                        alert("thrownError = " + thrownError);
-//                        alert("ajaxOptions = " + ajaxOptions);
-//                        //通常ajaxOptions或thrownError只有一個有值
-//                    },
-//                    complete: function(XMLHttpRequest, textStatus) {
-//                        alert("textStatus = " + textStatus);
-//                        //alert("complete");
-//                        // the options for this ajax request
-//
-//                    }
-//
-//                })
-                
-                 
+                //                
+                //                $.ajax({
+                //                    type: "GET",
+                //                    url:"https://httpbin.org/get",
+                //                    //url: "https://jsonplaceholder.typicode.com/todos/1",
+                //                    //                    data: {
+                //                    //                        datafromtestFile: $("#input").val(),
+                //                    //                    },
+                //                    dataType: "text",
+                //                    success: function(happy) {
+                //                        alert("Get Success = " + happy);
+                //                    },
+                //                    error: function(xhr, ajaxOptions, thrownError) {
+                //                        alert("error");
+                //                        alert("thrownError = " + thrownError);
+                //                        alert("ajaxOptions = " + ajaxOptions);
+                //                        //通常ajaxOptions或thrownError只有一個有值
+                //                    },
+                //                    complete: function(XMLHttpRequest, textStatus) {
+                //                        alert("textStatus = " + textStatus);
+                //                        //alert("complete");
+                //                        // the options for this ajax request
+                //
+                //                    }
+                //
+                //                })
+
+
+                /*
                 $.ajax({
                     type: "GET",
                     url:"https://service.health200.tw/insurtech/api/myfitcoin/me",
@@ -190,8 +192,99 @@
 
                     }
 
-                })
-                
+                })*/
+
+
+
+
+                //https://tonghuashuo.github.io/blog/jsonp.html
+                //ok jsonp
+//                $.ajax({
+//                        type: "get",
+//                        url: "http://api.forismatic.com/api/1.0/",
+//                        data: {
+//                            method: "getQuote",
+//                            format: "jsonp",
+//                            lang: "en"
+//                        },
+//                        dataType: "jsonp",
+//                        jsonp: "jsonp",
+//                        jsonpCallback: "myJsonMethod"
+//                    }).done(function(res) {
+//                        console.log("success");
+//                        console.log(res);
+//                    })
+//                    .fail(function(res) {
+//                        console.log("error");
+//                        console.log(res);
+//                    });
+//
+//
+//                function myJsonMethod(response) {
+//                    alert("get");
+//                    console.log(response);
+//                }
+
+
+                $.ajax({
+                        type: "get",
+                        url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
+                        data: {
+                            method: "getQuote",
+                            format: "jsonp",
+                            lang: "en"
+                        },
+                        dataType: "jsonp",
+                        jsonp: "jsonp",
+                        jsonpCallback: "myJsonMethod"
+                    }).done(function(res) {
+                        console.log("success");
+                        console.log(res);
+                    })
+                    .fail(function(res) {
+                        console.log("error");
+                        console.log(res);
+                    });
+
+
+                function myJsonMethod(response) {
+                    alert("get");
+                    console.log(response);
+                }
+
+                /*
+
+                $.ajax({
+                    type: "get",
+                    url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
+                    dataType: "jsonp",
+                    jsonp: "jsonp",
+                    jsonpCallback: "myJsonMethod2"
+                });
+
+
+                function myJsonMethod2(response) {
+                   
+                    console.log(response);
+                }*/
+
+
+                /*
+                $.ajax({
+                    type: "GET",
+                    async: false,
+                    url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
+                    dataType: "jsonp", //指定以jsonp方式執行
+                    jsonp: "mycallback", //"mycallback"會以GET的變數名稱傳送，沒指定時，jQuery使用"callback"當變數名稱
+                    jsonpCallback: 'aaaa', //"mycallback"變數的值，沒指定時，jQuery隨機產生
+                    success: function(res) {
+                        console.dir(res)
+                    },
+                    error: function() {
+                        alert('fail');
+                    }
+                });*/
+
 
 
 
