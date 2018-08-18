@@ -227,31 +227,31 @@
                 }
 
 
-                $.ajax({
-                        type: "get",
-                        url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
-                        data: {
-                            method: "getQuote",
-                            format: "jsonp",
-                            lang: "en"
-                        },
-                        dataType: "jsonp",
-                        jsonp: "jsonp",
-                        jsonpCallback: "myJsonMethod"
-                    }).done(function(res) {
-                        console.log("success");
-                        console.log(res);
-                    })
-                    .fail(function(res) {
-                        console.log("error");
-                        console.log(res);
-                    });
-
-
-                function myJsonMethod(response) {
-                    alert("get");
-                    console.log(response);
-                }
+//                $.ajax({
+//                        type: "get",
+//                        url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
+//                        data: {
+//                            method: "getQuote",
+//                            format: "jsonp",
+//                            lang: "en"
+//                        },
+//                        dataType: "jsonp",
+//                        jsonp: "jsonp",
+//                        jsonpCallback: "myJsonMethod"
+//                    }).done(function(res) {
+//                        console.log("success");
+//                        console.log(res);
+//                    })
+//                    .fail(function(res) {
+//                        console.log("error");
+//                        console.log(res);
+//                    });
+//
+//
+//                function myJsonMethod(response) {
+//                    alert("get");
+//                    console.log(response);
+//                }
 
                 /*
 
