@@ -68,7 +68,7 @@
         $(document).ready(function() {
             $("#test").click(function() {
 
-                alert("Hello! I am an alert box!2");
+                alert("Hello! I am an alert box!3");
 
                 var person = {
                     userName: "player-21",
@@ -198,26 +198,50 @@
 
 
                 //https://tonghuashuo.github.io/blog/jsonp.html
-                //ok jsonp
+                //ok jsonp 但是到上線時有問題
+                //                $.ajax({
+                //                        type: "get",
+                //                        url: "http://api.forismatic.com/api/1.0/",
+                //                        data: {
+                //                            method: "getQuote",
+                //                            format: "jsonp",
+                //                            lang: "en"
+                //                        },
+                //                        dataType: "jsonp",
+                //                        jsonp: "jsonp",
+                //                        jsonpCallback: "myJsonMethod"
+                //                    }).done(function(res) {
+                //                        alert("get");
+                //                        console.log("success");
+                //                        console.log(res);
+                //                    })
+                //                    .fail(function(res) {
+                //                        console.log("error");
+                //                        console.log(res);
+                //                    });
+                //
+                //
+                //                function myJsonMethod(response) {
+                //                    alert("get");
+                //                    console.log(response);
+                //                }
+
+
                 $.ajax({
                         type: "get",
-                        url: "http://api.forismatic.com/api/1.0/",
-                        data: {
-                            method: "getQuote",
-                            format: "jsonp",
-                            lang: "en"
-                        },
+                        url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
                         dataType: "jsonp",
                         jsonp: "jsonp",
                         jsonpCallback: "myJsonMethod"
                     }).done(function(res) {
-                        alert("get");
                         console.log("success");
                         console.log(res);
+                        alert(res);
                     })
                     .fail(function(res) {
                         console.log("error");
                         console.log(res);
+                        alert(res);
                     });
 
 
@@ -225,33 +249,6 @@
                     alert("get");
                     console.log(response);
                 }
-
-
-//                $.ajax({
-//                        type: "get",
-//                        url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
-//                        data: {
-//                            method: "getQuote",
-//                            format: "jsonp",
-//                            lang: "en"
-//                        },
-//                        dataType: "jsonp",
-//                        jsonp: "jsonp",
-//                        jsonpCallback: "myJsonMethod"
-//                    }).done(function(res) {
-//                        console.log("success");
-//                        console.log(res);
-//                    })
-//                    .fail(function(res) {
-//                        console.log("error");
-//                        console.log(res);
-//                    });
-//
-//
-//                function myJsonMethod(response) {
-//                    alert("get");
-//                    console.log(response);
-//                }
 
                 /*
 
