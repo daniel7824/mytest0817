@@ -7,15 +7,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-<head>
-     <LINK REL="SHORTCUT ICON" HREF="http://www.mydomain.com/myicon.ico">
-</head>
+
 <body style="max-width:600px">
 
     <header class="w3-bar w3-card w3-theme">
         <h1 class="w3-bar-item">API TEST</h1>
     </header>
-
 
 
 
@@ -61,12 +58,44 @@
     </div>
 -->
     <button id="test">Call API</button>
+    //<button onclick="getCookie(test)">Get Cookie</button>
 
     <footer class="w3-container w3-theme w3-margin-top">
         <h3>Footer</h3>
     </footer>
 
     <script>
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            alert("getCookie");
+            var nameEQ = name + "=";
+            alert("document.cookie = " + document.cookie);
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') 
+                    c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) 
+                    alert(c.substring(nameEQ.length, c.length));
+                    return c.substring(nameEQ.length, c.length);
+            }
+
+            return null;
+        }
+
+        function eraseCookie(name) {
+            document.cookie = name + '=; Max-Age=-99999999;';
+        }
+
         function myFunction() {
             alert("Hello! I am an alert box!");
         }
@@ -86,6 +115,7 @@
                         type: "get",
                         url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
                         contentType: "application/x-www-form-urlencoded",
+                        xhrFields: { withCredentials:true },
                         dataType: "jsonp",
                         jsonp: "myJsonp",
                         jsonpCallback: "myJsonMethod"
@@ -97,7 +127,7 @@
                     .fail(function(res) {
                         console.log("fail");
                         console.log(res);
-                    
+
                         alert(res.statusText);
                         alert(res.status);
                         //alert(res);
@@ -150,34 +180,34 @@
 
                 //alert(JSON.stringify(person));
 
-                
-//                $.ajax({
-//                    url: 'https://service.health200.tw/insurtech/api/admin/login',
-//                    type: 'POST',
-//                    dataType: 'json',
-//                    //contentType: 'application/json',
-//                    crossDomain: true,
-//                    success: function(data) {
-//                        alert("success");
-//                        //alert(data.msg);
-//                        //$('#target').html(data.msg);
-//                    },
-//                    error: function(xhr, ajaxOptions, thrownError) {
-//                        alert("error");
-//                        //alert("thrownError = " + thrownError);
-//                        //alert("ajaxOptions = " + ajaxOptions);
-//                        //通常ajaxOptions或thrownError只有一個有值
-//                    },
-//                    complete: function(XMLHttpRequest, textStatus) {
-//                        //alert("textStatus = " + textStatus);
-//
-//                        //alert("complete");
-//                        // the options for this ajax request
-//
-//                    },
-//
-//                    data: JSON.stringify(person)
-//                });
+
+                //                $.ajax({
+                //                    url: 'https://service.health200.tw/insurtech/api/admin/login',
+                //                    type: 'POST',
+                //                    dataType: 'json',
+                //                    //contentType: 'application/json',
+                //                    crossDomain: true,
+                //                    success: function(data) {
+                //                        alert("success");
+                //                        //alert(data.msg);
+                //                        //$('#target').html(data.msg);
+                //                    },
+                //                    error: function(xhr, ajaxOptions, thrownError) {
+                //                        alert("error");
+                //                        //alert("thrownError = " + thrownError);
+                //                        //alert("ajaxOptions = " + ajaxOptions);
+                //                        //通常ajaxOptions或thrownError只有一個有值
+                //                    },
+                //                    complete: function(XMLHttpRequest, textStatus) {
+                //                        //alert("textStatus = " + textStatus);
+                //
+                //                        //alert("complete");
+                //                        // the options for this ajax request
+                //
+                //                    },
+                //
+                //                    data: JSON.stringify(person)
+                //                });
 
 
 
