@@ -75,39 +75,39 @@
         $(document).ready(function() {
             $("#test").click(function() {
 
-                alert("Click");
+                alert("Click2");
 
                 var person = {
                     userName: "player-21",
                     password: "123456"
                 }
-//
-//                $.ajax({
-//                        type: "get",
-//                        url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
-//                        contentType: "application/x-www-form-urlencoded",
-//                        dataType: "jsonp",
-//                        jsonp: "myJsonp",
-//                        jsonpCallback: "myJsonMethod"
-//                    }).done(function(res) {
-//                        console.log("done");
-//                        console.log(res);
-//                        //alert(res);
-//                    })
-//                    .fail(function(res) {
-//                        console.log("fail");
-//                        console.log(res);
-//                    
-//                        alert(res.statusText);
-//                        alert(res.status);
-//                        //alert(res);
-//                    });
-//
-//
-//                function myJsonMethod(response) {
-//                    alert("get");
-//                    console.log(response);
-//                }
+
+                $.ajax({
+                        type: "get",
+                        url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
+                        contentType: "application/x-www-form-urlencoded",
+                        dataType: "jsonp",
+                        jsonp: "myJsonp",
+                        jsonpCallback: "myJsonMethod"
+                    }).done(function(res) {
+                        console.log("done");
+                        console.log(res);
+                        //alert(res);
+                    })
+                    .fail(function(res) {
+                        console.log("fail");
+                        console.log(res);
+                    
+                        alert(res.statusText);
+                        alert(res.status);
+                        //alert(res);
+                    });
+
+
+                function myJsonMethod(response) {
+                    alert("get");
+                    console.log(response);
+                }
 
                 //                $.ajax({
                 //                    url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
@@ -151,45 +151,33 @@
                 //alert(JSON.stringify(person));
 
                 
-                $.ajax({
-                    url: 'https://service.health200.tw/insurtech/api/admin/login',
-                    type: 'POST',
-                    dataType: 'json',
-                    //contentType: 'application/json',
-                    crossDomain: true,
-                    success: function(data) {
-                        alert("success");
-                        //alert(data.msg);
-                        //$('#target').html(data.msg);
-                    },
-                    error: function(xhr, ajaxOptions, thrownError) {
-                         
-                        alert("error");
-                         alert("xhr = " + xhr);
-                         alert("ajaxOptions = " + ajaxOptions);
-                        alert("thrownError = " + thrownError);
-                         console.log("error");
-                         console.log("xhr = " + xhr);
-                         console.log("ajaxOptions = " + ajaxOptions);
-                        console.log("thrownError = " + thrownError);
-                        //alert("thrownError = " + thrownError);
-                        //alert("ajaxOptions = " + ajaxOptions);
-                        //通常ajaxOptions或thrownError只有一個有值
-                    },
-                    complete: function(XMLHttpRequest, XMLHttpRequest) {
-                        alert("complete");
-                        alert("XMLHttpRequest = " + XMLHttpRequest);
-                         alert("XMLHttpRequest = " + XMLHttpRequest);
-                         console.log("complete");
-                        console.log("XMLHttpRequest = " + XMLHttpRequest);
-                         console.log("XMLHttpRequest = " + XMLHttpRequest);
-                        //alert("complete");
-                        // the options for this ajax request
-
-                    },
-
-                    data: JSON.stringify(person)
-                });
+//                $.ajax({
+//                    url: 'https://service.health200.tw/insurtech/api/admin/login',
+//                    type: 'POST',
+//                    dataType: 'json',
+//                    //contentType: 'application/json',
+//                    crossDomain: true,
+//                    success: function(data) {
+//                        alert("success");
+//                        //alert(data.msg);
+//                        //$('#target').html(data.msg);
+//                    },
+//                    error: function(xhr, ajaxOptions, thrownError) {
+//                        alert("error");
+//                        //alert("thrownError = " + thrownError);
+//                        //alert("ajaxOptions = " + ajaxOptions);
+//                        //通常ajaxOptions或thrownError只有一個有值
+//                    },
+//                    complete: function(XMLHttpRequest, textStatus) {
+//                        //alert("textStatus = " + textStatus);
+//
+//                        //alert("complete");
+//                        // the options for this ajax request
+//
+//                    },
+//
+//                    data: JSON.stringify(person)
+//                });
 
 
 
