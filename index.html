@@ -163,14 +163,26 @@
                         //$('#target').html(data.msg);
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
+                         
                         alert("error");
+                         alert("xhr = " + xhr);
+                         alert("ajaxOptions = " + ajaxOptions);
+                        alert("thrownError = " + thrownError);
+                         console.log("error");
+                         console.log("xhr = " + xhr);
+                         console.log("ajaxOptions = " + ajaxOptions);
+                        console.log("thrownError = " + thrownError);
                         //alert("thrownError = " + thrownError);
                         //alert("ajaxOptions = " + ajaxOptions);
                         //通常ajaxOptions或thrownError只有一個有值
                     },
-                    complete: function(XMLHttpRequest, textStatus) {
-                        //alert("textStatus = " + textStatus);
-
+                    complete: function(XMLHttpRequest, XMLHttpRequest) {
+                        alert("complete");
+                        alert("XMLHttpRequest = " + XMLHttpRequest);
+                         alert("XMLHttpRequest = " + XMLHttpRequest);
+                         console.log("complete");
+                        console.log("XMLHttpRequest = " + XMLHttpRequest);
+                         console.log("XMLHttpRequest = " + XMLHttpRequest);
                         //alert("complete");
                         // the options for this ajax request
 
