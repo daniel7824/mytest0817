@@ -10,12 +10,13 @@
 <body style="max-width:600px">
 
     <header class="w3-bar w3-card w3-theme">
-        <h1 class="w3-bar-item">Movies</h1>
+        <h1 class="w3-bar-item">API TEST</h1>
     </header>
 
-    <button onclick="myFunction()">Try it</button>
-    <button id="test">Try it2</button>
 
+
+
+    <!--
     <div class="w3-container">
         <hr>
         <div class="w3-cell-row">
@@ -55,6 +56,8 @@
         </div>
         <hr>
     </div>
+-->
+    <button id="test">Call API</button>
 
     <footer class="w3-container w3-theme w3-margin-top">
         <h3>Footer</h3>
@@ -65,15 +68,52 @@
             alert("Hello! I am an alert box!");
         }
 
+        //jsonp可以解決ajax無法跨域的問題，但只能用get 無法用post
         $(document).ready(function() {
             $("#test").click(function() {
 
-                alert("Hello! I am an alert box!3");
+                alert("Click");
 
                 var person = {
                     userName: "player-21",
                     password: "123456"
                 }
+
+                $.ajax({
+                        type: "get",
+                        url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
+                        contentType: "application/x-www-form-urlencoded",
+                        dataType: "jsonp",
+                        jsonp: "myJsonp",
+                        jsonpCallback: "myJsonMethod"
+                    }).done(function(res) {
+                        console.log("done");
+                        console.log(res);
+                        //alert(res);
+                    })
+                    .fail(function(res) {
+                        console.log("fail");
+                        console.log(res);
+                    
+                        alert(res.statusText);
+                        alert(res.status);
+                        //alert(res);
+                    });
+
+
+                function myJsonMethod(response) {
+                    alert("get");
+                    console.log(response);
+                }
+
+                //                $.ajax({
+                //                    url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
+                //                    crossDomain: true,
+                //                    success: function(data) {
+                //                        console.log(data);
+                //                    }
+                //                });
+
                 //
                 //                // construct an HTTP request
                 //                var xhr = new XMLHttpRequest();
@@ -167,32 +207,24 @@
                 //                })
 
 
-                /*
-                $.ajax({
-                    type: "GET",
-                    url:"https://service.health200.tw/insurtech/api/myfitcoin/me",
-                    //url: "https://jsonplaceholder.typicode.com/todos/1",
-                    //                    data: {
-                    //                        datafromtestFile: $("#input").val(),
-                    //                    },
-                    dataType: "text",
-                    success: function(happy) {
-                        alert("Get Success = " + happy);
-                    },
-                    error: function(xhr, ajaxOptions, thrownError) {
-                        alert("error");
-                        alert("thrownError = " + thrownError);
-                        alert("ajaxOptions = " + ajaxOptions);
-                        //通常ajaxOptions或thrownError只有一個有值
-                    },
-                    complete: function(XMLHttpRequest, textStatus) {
-                        alert("textStatus = " + textStatus);
-                        //alert("complete");
-                        // the options for this ajax request
 
-                    }
-
-                })*/
+                //                $.ajax({
+                //                    type: "GET",
+                //                    url:"https://service.health200.tw/insurtech/api/myfitcoin/me",
+                //                    dataType: "text",
+                //                    success: function(result) {
+                //                        alert("result = " + result);
+                //                    },
+                //                    error: function(xhr, ajaxOptions, thrownError) {
+                //                        alert("error");
+                //                    },
+                //                    complete: function(XMLHttpRequest, textStatus) {
+                //                        alert("textStatus = " + textStatus);
+                //                       
+                //
+                //                    }
+                //
+                //                })
 
 
 
@@ -226,29 +258,23 @@
                 //                    console.log(response);
                 //                }
 
+                //                                $.ajax({
+                //                                    url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
+                //                                    crossDomain: true,
+                //                                    success: function(data) {
+                //                                        console.log(data);
+                //                                    }
 
-                $.ajax({
-                        type: "get",
-                        url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
-                        dataType: "jsonp",
-                        jsonp: "jsonp",
-                        jsonpCallback: "myJsonMethod"
-                    }).done(function(res) {
-                        console.log("success");
-                        console.log(res);
-                        alert(res);
-                    })
-                    .fail(function(res) {
-                        console.log("error");
-                        console.log(res);
-                        alert(res);
-                    });
+                //
+                //                $.ajax({
+                //                    url: "https://service.health200.tw/insurtech/api/myfitcoin/me/?callback=?",
+                //                    dataType: "jsonp",
+                //                    success: function(data) {
+                //                        console.log(data);
+                //                    }
+                //                });
 
 
-                function myJsonMethod(response) {
-                    alert("get");
-                    console.log(response);
-                }
 
                 /*
 
