@@ -81,33 +81,33 @@
                     userName: "player-21",
                     password: "123456"
                 }
-
-                $.ajax({
-                        type: "get",
-                        url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
-                        contentType: "application/x-www-form-urlencoded",
-                        dataType: "jsonp",
-                        jsonp: "myJsonp",
-                        jsonpCallback: "myJsonMethod"
-                    }).done(function(res) {
-                        console.log("done");
-                        console.log(res);
-                        //alert(res);
-                    })
-                    .fail(function(res) {
-                        console.log("fail");
-                        console.log(res);
-                    
-                        alert(res.statusText);
-                        alert(res.status);
-                        //alert(res);
-                    });
-
-
-                function myJsonMethod(response) {
-                    alert("get");
-                    console.log(response);
-                }
+//
+//                $.ajax({
+//                        type: "get",
+//                        url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
+//                        contentType: "application/x-www-form-urlencoded",
+//                        dataType: "jsonp",
+//                        jsonp: "myJsonp",
+//                        jsonpCallback: "myJsonMethod"
+//                    }).done(function(res) {
+//                        console.log("done");
+//                        console.log(res);
+//                        //alert(res);
+//                    })
+//                    .fail(function(res) {
+//                        console.log("fail");
+//                        console.log(res);
+//                    
+//                        alert(res.statusText);
+//                        alert(res.status);
+//                        //alert(res);
+//                    });
+//
+//
+//                function myJsonMethod(response) {
+//                    alert("get");
+//                    console.log(response);
+//                }
 
                 //                $.ajax({
                 //                    url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
