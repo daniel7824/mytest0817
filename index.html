@@ -58,14 +58,13 @@
     </div>
 -->
     <button id="test">Call API2</button>
-<!--    <button onclick="getCookie(test)">Get Cookie</button>-->
+    <!--    <button onclick="getCookie(test)">Get Cookie</button>-->
 
     <footer class="w3-container w3-theme w3-margin-top">
         <h3>Footer</h3>
     </footer>
 
     <script>
-
         function myFunction() {
             alert("Hello! I am an alert box!");
         }
@@ -85,16 +84,20 @@
                         type: "get",
                         url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
                         contentType: "application/x-www-form-urlencoded",
-                        xhrFields: { withCredentials:true },
+                        xhrFields: {
+                            withCredentials: true
+                        },
                         dataType: "jsonp",
                         jsonp: "myJsonp",
                         jsonpCallback: "myJsonMethod"
                     }).done(function(res) {
+                        alert("done");
                         console.log("done");
                         console.log(res);
-                        //alert(res);
+
                     })
                     .fail(function(res) {
+                        alert("fail");
                         console.log("fail");
                         console.log(res);
 
