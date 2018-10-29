@@ -57,7 +57,7 @@
         <hr>
     </div>
 -->
-    <button id="test">Call API2</button>
+    <button id="test">Call API 3</button>
     <!--    <button onclick="getCookie(test)">Get Cookie</button>-->
 
     <footer class="w3-container w3-theme w3-margin-top">
@@ -73,13 +73,32 @@
         $(document).ready(function() {
             $("#test").click(function() {
 
-                //alert("Click");
+                alert("Click");
 
                 var person = {
                     userName: "player-21",
                     password: "123456"
                 }
 
+                $.ajax({
+                    type: "GET",
+                    url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    dataType: "jsonp",
+                    success: function(result) {
+                        alert("result = " + result);
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        alert("error");
+                    },
+                    complete: function(XMLHttpRequest, textStatus) {
+                        alert("textStatus = " + textStatus);
+                    }
+                })
+
+                /*
                 $.ajax({
                         type: "get",
                         url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
@@ -110,7 +129,7 @@
                 function myJsonMethod(response) {
                     alert("get");
                     console.log(response);
-                }
+                }*/
 
                 //                $.ajax({
                 //                    url: "https://service.health200.tw/insurtech/api/myfitcoin/me",
